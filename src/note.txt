@@ -1,0 +1,51 @@
+APP.JS
+
+function BigText(props){
+  return <h1 align={props.mode}>{props.text}</h1>
+}
+
+function SmallText(props){
+  return <marquee direction={props.dir}>{props.text}</marquee>
+}
+
+function OtherText(props){
+  return <em>{props.text}</em>
+}
+
+
+INDEX.JS
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import BigText from './App';
+import {SmallText, OtherText} from './App'
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+  <BigText text="first" mode="left"/>
+  <BigText text="second" mode="center"/>
+  <BigText text="third" mode="right"/>
+  <BigText text="fourth" mode="left"/>
+  <BigText text="fifth" mode="center"/>
+  <BigText text="sixth" mode="right"/>
+  <SmallText dir="left" text="First to move"/>
+  <SmallText dir="right" text="Second to move"/>
+  <SmallText dir="up" text="Third to move"/>  
+  <SmallText dir="down" text="fourth to move"/>
+  <OtherText text="I love Coding" color="green"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+export default BigText
+
+export {SmallText, OtherText}
