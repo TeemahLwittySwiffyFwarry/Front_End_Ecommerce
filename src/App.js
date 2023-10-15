@@ -23,7 +23,8 @@ const App = () => {
         <Route path='/signin' element={<Signin/>}/>
 
       </Routes>
-      <ToastContainer/>
+      <ToastContainer
+      position="top-center"/>
     
     </BrowserRouter>
   )
